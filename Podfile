@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
 use_frameworks!
-platform :ios, '8.0'
-
 target 'IOSStock' do
-pod 'AFNetworking', '~> 2.6'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end

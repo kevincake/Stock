@@ -149,6 +149,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="           " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6k-j4-DiY">
                                                     <rect key="frame" x="123" y="7" width="75" height="30"/>
                                                     <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1T-MR-npN">
@@ -635,7 +636,6 @@
         <!--Login Controller-->
         <scene sceneID="VDt-vI-44Q">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lfI-d3-TrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Wwm-xO-LvJ" customClass="LoginController" customModule="IOSStock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8fo-Vg-vdH"/>
@@ -664,7 +664,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登录"/>
                                 <connections>
-                                    <segue destination="kTA-w1-ufF" kind="show" id="z4u-1w-8SH"/>
+                                    <action selector="loginAction:" destination="Wwm-xO-LvJ" eventType="touchUpInside" id="Qv6-nq-DDU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax2-Ce-NgD">
@@ -686,7 +686,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="accountTF" destination="ped-6S-cu3" id="gM4-D7-adU"/>
+                        <outlet property="loginBtn" destination="Iba-vn-sBg" id="jY4-F9-b2x"/>
+                        <outlet property="passwordTF" destination="Ewg-rX-PIo" id="XHI-QF-iwZ"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfI-d3-TrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-658" y="-548"/>
         </scene>
@@ -776,18 +782,27 @@
                                 <rect key="frame" x="194" y="159" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="获取验证码"/>
+                                <connections>
+                                    <action selector="onTapVerify:" destination="yF6-1H-Yi6" eventType="touchUpInside" id="CGI-bI-MCQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKg-sS-Efs">
                                 <rect key="frame" x="137" y="225" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="下一步"/>
                                 <connections>
-                                    <segue destination="0Lq-Xh-hmL" kind="show" id="w2F-7V-U1C"/>
+                                    <action selector="onTapNext:" destination="yF6-1H-Yi6" eventType="touchUpInside" id="7l0-8m-fbq"/>
+                                    <segue destination="0Lq-Xh-hmL" kind="show" identifier="verify2register" id="w2F-7V-U1C"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="onTapVerifyAction" destination="jo0-O3-0i0" id="3A2-vh-o2V"/>
+                        <outlet property="phoneTF" destination="l5o-hO-Ht5" id="SS5-n2-DKy"/>
+                        <outlet property="verifyCodeTF" destination="boB-Rv-mZJ" id="GG4-sG-psC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVt-on-6Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -831,16 +846,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="确认注册"/>
                                 <connections>
+                                    <action selector="onTapConfirm:" destination="0Lq-Xh-hmL" eventType="touchUpInside" id="5Vv-T4-VDv"/>
                                     <segue destination="kTA-w1-ufF" kind="show" id="4FA-9D-H3g"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="accountTF" destination="F2u-Nl-YCe" id="YwG-MF-Kyy"/>
+                        <outlet property="confirmpasswordTF" destination="bAI-xu-Iue" id="aPb-Py-mb9"/>
+                        <outlet property="passwordTF" destination="37V-I2-dky" id="rrY-r0-9cB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7l-ho-zCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="276.76056338028167"/>
+            <point key="canvasLocation" x="296" y="277"/>
         </scene>
     </scenes>
     <resources>
@@ -850,7 +871,7 @@
         <image name="guide_image03" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y0i-of-dKh"/>
+        <segue reference="4FA-9D-H3g"/>
         <segue reference="jdW-7M-d0C"/>
     </inferredMetricsTieBreakers>
 </document>

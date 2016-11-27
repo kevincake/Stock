@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,15 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1ED8BE8BD6A53853974A60E1AC8B1019</key>
+		<key>4C7D81865AAB931EC76D009FF87E710D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92147E9EFB9B81E07ED99139CB1FB37F</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4810E17D11278B4C0DF188EB02FFA46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
